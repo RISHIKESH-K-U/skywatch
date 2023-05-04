@@ -10,11 +10,8 @@ app.get("/", function (req, res) {
 app.post("/", function (req, res) {
   const clong = req.body.long;
   const clat = req.body.lat;
-  const url =
-    "https://api.openweathermap.org/data/2.5/weather?appid=36be0d51869691bc579b3e6ad4ee691d&lat=" +
-    clat +
-    "&lon=" +
-    clong;
+  const url = "https://api.openweathermap.org/data/2.5/weather?appid="; //+ENTER API KEY +
+  "&lat=" + clat + "&lon=" + clong;
   https.get(url, function (response) {
     console.log(response.statusCode);
     response.on("data", function (data) {
